@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+7a005a3a2e1a706c799fe93a5878b50d controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_autogen
