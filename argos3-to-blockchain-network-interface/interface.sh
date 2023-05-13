@@ -1,9 +1,9 @@
-export FABRIC_CFG_PATH=$PWD/../config/
+export FABRIC_CFG_PATH=../hyperledger/config/
 export CORE_PEER_LOCALMSPID=Org1MSP
 export CORE_PEER_TLS_ENABLED=true
-export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
-export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
-export PATH=$PATH:$PWD/../bin
+export CORE_PEER_TLS_ROOTCERT_FILE=../network/organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+export CORE_PEER_MSPCONFIGPATH=../network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+export PATH=$PATH:../hyperledger/bin
 
 
 
@@ -30,12 +30,12 @@ peer chaincode query -C mychannel -n basic -c '{"Args":["GetAllAssets"]}' | jq .
 
 function updateAsset() {
     setPeer
-    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" -C mychannel -n basic -c "{\"function\":\"UpdateAsset\",\"Args\":[\"$LANDMARK\", \"$POSITION_X\", \"$POSITION_Y\", \"$REPORTED_BY\"]}" 
+    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile "../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" -C mychannel -n basic -c "{\"function\":\"UpdateAsset\",\"Args\":[\"$LANDMARK\", \"$POSITION_X\", \"$POSITION_Y\", \"$REPORTED_BY\"]}" 
 }
 
 function initAsset() {
     setPeer
-    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" -C mychannel -n basic -c "{\"function\":\"InitLedger\",\"Args\":[]}" 
+    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile "../network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" -C mychannel -n basic -c "{\"function\":\"InitLedger\",\"Args\":[]}" 
 }
 
 function channelList() {

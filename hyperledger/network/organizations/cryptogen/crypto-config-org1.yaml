@@ -1,0 +1,59 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+
+# ---------------------------------------------------------------------------
+# "PeerOrgs" - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+# PeerOrgs:
+#   # ---------------------------------------------------------------------------
+#   # Org1
+#   # ---------------------------------------------------------------------------
+#   - Name: Org1
+#     Domain: org1.example.com
+#     EnableNodeOUs: true
+
+#     Template:
+#       Count: 1
+#       SANS:
+#         - localhost
+
+#     Users:
+#       Count: 1
+
+PeerOrgs:
+  # ---------------------------------------------------------------------------
+  # Org1
+  # ---------------------------------------------------------------------------
+  - Name: Org1
+    Domain: org1.example.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 3
+      SANS:
+        - localhost
+
+    Users:
+      Count: 1
+
+    # Modify the following to add Peer 1 and Peer 2
+    # --------------------------------------------
+    PeerNodes:
+      - Count: 1
+        SANS:
+          - "peer1.org1.example.com"
+        # Specify the MSP ID for Peer 1
+        MSPDir: ../peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp
+        # Specify the TLS directory for Peer 1
+        TLSDir: ../peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls
+
+      - Count: 1
+        SANS:
+          - "peer2.org1.example.com"
+        # Specify the MSP ID for Peer 2
+        MSPDir: ../peerOrganizations/org1.example.com/peers/peer2.org1.example.com/msp
+        # Specify the TLS directory for Peer 2
+        TLSDir: ../peerOrganizations/org1.example.com/peers/peer2.org1.example.com/tls
