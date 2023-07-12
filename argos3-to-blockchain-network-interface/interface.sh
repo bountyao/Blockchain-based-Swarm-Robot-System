@@ -45,7 +45,12 @@ function channelList() {
 
 function blockchainInfo() {
   setPeer
-  peer channel getinfo -c mychannel 
+  peer channel fetch 0 /dev/null >&-  # Fetch the genesis block
+
+channels=$(grep -oP 'Received block.*channel [^ ]+' peer.log | awk '{print $NF}' | sort -u)
+number_of_peers=$(echo "$channels" | wc -l)
+
+echo "Number of peers: $number_of_peers"
 }
 
 
