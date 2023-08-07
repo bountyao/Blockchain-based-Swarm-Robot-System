@@ -1,10 +1,3 @@
-#!/bin/bash
-#
-# SPDX-License-Identifier: Apache-2.0
-
-
-
-
 # default to using Org1
 ORG=${1:-Org1}
 
@@ -12,7 +5,6 @@ ORG=${1:-Org1}
 set -e
 set -o pipefail
 
-# Where am I?
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 ORDERER_CA=${DIR}/test-network/organizations/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem

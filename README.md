@@ -1,5 +1,10 @@
 # Blockchain-based-Swarm-Robot-System
+This project presents a proof-of-concept blockchain-based swarm robot system designed to enhance the security of robot swarms using blockchain technology. The system is composed of three modules: ARGoS3, an open-source simulator capable of simulating large-scale robot swarms; an ARGoS3-to-Blockchain interface responsible for linking the simulation with the blockchain network, and Hyperledger Fabric, a blockchain framework utilized to create a permissioned and private blockchain network.
 
+In the implementation, each robot functions as a blockchain peer, maintaining a synchronized record of sensor data and historical transactions across the entire swarm network. As the simulation begins, each robot collects readings from its environment. At fixed intervals, these sensor readings are propagated and securely stored within the blockchain network. During the simulation, robots navigate and detect landmarks on the map, and once detected, the coordinates are shared across the blockchain network. 
+
+# Setup
+Clone the repository with the following command.
 ```
 git clone https://github.com/CzarCerro/Blockchain-based-Swarm-Robot-System
 ```
