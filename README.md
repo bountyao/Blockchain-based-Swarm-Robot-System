@@ -29,7 +29,7 @@ Initialize the Hyperledger Fabric network by running the following command. This
 bash ./scripts/init.sh
 ```
 
-The following command starts up the network. However, this command should only be executed if you have already run `bash ./scripts/init.sh` beforehand.
+Shuting down your Linux distro instance would result in the Docker peers to be shut down. The following command starts up the network again. However, this command should only be executed if you have already run `bash ./scripts/init.sh` beforehand.
 ```
 bash ./scripts/startup.sh
 ```
