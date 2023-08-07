@@ -3,8 +3,18 @@ This project presents a proof-of-concept blockchain-based swarm robot system des
 
 In the implementation, each robot functions as a blockchain peer, maintaining a synchronized record of sensor data and historical transactions across the entire swarm network. As the simulation begins, each robot collects readings from its environment. At fixed intervals, these sensor readings are propagated and securely stored within the blockchain network. During the simulation, robots navigate and detect landmarks on the map, and once detected, the coordinates are shared across the blockchain network. 
 
+# Requirements
+- WSL2
+- Docker
+- ARGoS3 (https://www.argos-sim.info/index.php)
+- Node.js
+- Hyperledger Fabric (https://hyperledger-fabric.readthedocs.io/en/latest/index.html)
+
 # Setup
-Clone the repository with the following command.
+The project has been successfully tested and confirmed to be operational in a Linux
+environment. However, compatibility with other operating systems such as Windows and
+macOS has not been tested yet. To clone the repository and get started, execute the
+following command in the Linux terminal:
 ```
 git clone https://github.com/CzarCerro/Blockchain-based-Swarm-Robot-System
 ```
