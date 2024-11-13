@@ -3,6 +3,8 @@ This project presents a proof-of-concept blockchain-based swarm robot system des
 
 In the implementation, each robot functions as a blockchain peer, maintaining a synchronized record of sensor data and historical transactions across the entire swarm network. In the ARGoS3 simulation, robots navigate and detect landmarks on the map, and once detected, the coordinates are propagated to the Hyperledger Fabric blockchain network via the ARGoS3-to-Blockchain interface. 
 
+![image](https://github.com/user-attachments/assets/070ded56-9a31-4bbe-9679-49baf843f56e)
+
 # Requirements
 - WSL2
 - Docker
